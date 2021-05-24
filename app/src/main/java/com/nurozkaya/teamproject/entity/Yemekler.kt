@@ -2,6 +2,7 @@ package com.nurozkaya.teamproject.entity
 //1
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Yemekler (
     @SerializedName("yemek_id")
@@ -15,5 +16,5 @@ data class Yemekler (
     var yemek_resim_adi:String,
     @SerializedName("yemek_fiyat")
     @Expose
-    var yemek_fiyat:Int){
+    var yemek_fiyat:Int) : Serializable{
 }
