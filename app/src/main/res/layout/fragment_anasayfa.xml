@@ -10,6 +10,7 @@
         <variable
             name="anasayfaToolbarBaslik"
             type="String" />
+        <variable name="yemeklerAdapter" type="com.nurozkaya.teamproject.adapter.YemeklerAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,12 +32,14 @@
             app:title="@{anasayfaToolbarBaslik}" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:adapter="@{yemeklerAdapter}"
             android:id="@+id/rv"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@id/toolbarAnasayfa" />
 
         <TextView

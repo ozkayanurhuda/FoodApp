@@ -5,17 +5,39 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import com.nurozkaya.teamproject.R
+import com.nurozkaya.teamproject.databinding.FragmentYemekDetayBinding
+import com.nurozkaya.teamproject.viewmodel.YemekDetayFragmentViewModel
 
 
 class YemekDetayFragment : Fragment() {
+    private lateinit var tasarim: FragmentYemekDetayBinding
+    private lateinit var viewModel: YemekDetayFragmentViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_yemek_detay, container, false)
+        tasarim = DataBindingUtil.inflate(inflater,R.layout.fragment_yemek_detay, container, false)
+        tasarim.yemekDetayFragment = this
+        tasarim.yemekDetayToolbarBaslik = "Yemek Detay"
+
+        val  bundle:YemekDetayFragmentArgs by navArgs()
+        val gelenYemek = bundle.yemekNesne
+        tasarim.yemekNesnesi = gelenYemek
+
+        return tasarim.root
+
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        //Fragment içinde viewModel tanımlaması
+        val tempViewModel: YemekDetayFragmentViewModel by viewModels()
+        this.viewModel = tempViewModel
     }
 
 
