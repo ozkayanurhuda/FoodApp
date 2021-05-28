@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.nurozkaya.teamproject.R
 import com.nurozkaya.teamproject.adapter.YemeklerAdapter
 import com.nurozkaya.teamproject.databinding.FragmentAnasayfaBinding
@@ -28,8 +29,9 @@ class AnasayfaFragment : Fragment() {
         // Inflate the layout for this fragment
         tasarim = DataBindingUtil.inflate(inflater,R.layout.fragment_anasayfa, container, false)
         tasarim.anasayfaFragment = this
-        tasarim.anasayfaToolbarBaslik = "Yemekler"
         (activity as AppCompatActivity).setSupportActionBar(tasarim.toolbarAnasayfa)
+
+        tasarim.rv.layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
 
         viewModel.yemeklerlistesi.observe(viewLifecycleOwner, { yemeklerListesi ->
             adapter = YemeklerAdapter(requireContext(),yemeklerListesi,viewModel)

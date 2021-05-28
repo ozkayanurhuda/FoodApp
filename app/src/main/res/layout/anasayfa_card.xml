@@ -63,7 +63,7 @@
                     android:layout_marginTop="16dp"
                     android:textColor="#E01F59"
                     android:textSize="17sp"
-                    android:text="@{yemekNesne.yemek_fiyat + @string/turkish_lira}"
+                    android:text="@{yemekNesne.yemek_fiyat + ' ' + @string/turkish_lira}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"

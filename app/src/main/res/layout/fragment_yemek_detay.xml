@@ -42,7 +42,7 @@
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbarYemekDetay"
-            app:srcCompat="@drawable/ic_launcher_background" />
+            tools:srcCompat="@drawable/ic_launcher_background" />
 
         <TextView
             android:id="@+id/textViewYemekDetay"
@@ -51,18 +51,18 @@
             android:layout_marginStart="32dp"
             android:layout_marginLeft="32dp"
             android:layout_marginTop="32dp"
+            android:text="Detay metay"
             android:textColor="#737171"
             android:textSize="17sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewDetay"
-            app:layout_constraintTop_toBottomOf="@+id/textViewDetayIsim"
-            tools:text="Detay" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewDetayIsim" />
 
         <TextView
             android:id="@+id/textViewDetayFiyat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="72dp"
-            android:text="Fiyat \u20BA"
+            android:layout_marginTop="32dp"
+            android:text="@{yemekNesnesi.yemek_fiyat + ' ' + @string/turkish_lira}"
             android:textColor="#E01F59"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="Sipariş Ver"
@@ -103,7 +103,7 @@
             app:title="@{yemekDetayToolbarBaslik}" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageViewBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -123,7 +123,7 @@
             android:text="Yemek Detayları"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#09AFE0"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toEndOf="@+id/imageViewBack"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

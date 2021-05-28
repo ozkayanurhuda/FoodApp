@@ -2,7 +2,9 @@ package com.nurozkaya.teamproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.transition.Explode
 import android.util.Log
+import android.view.Window
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.nurozkaya.teamproject.entity.YemeklerCevap
@@ -27,28 +29,18 @@ class MainActivity : AppCompatActivity() {
 
         ydaoi=ApiUtils.getYemeklerDaoInterface()
         tumYemekleriGoster()
+
     }
     fun tumYemekleriGoster() {
         ydaoi.tumYemekler().enqueue(object : Callback<YemeklerCevap> {
             override fun onResponse(
                 call: Call<YemeklerCevap>?,
-                response: Response<YemeklerCevap>) {
+                response: Response<YemeklerCevap>) {}
 
-                val yemeklerListesi=response.body().yemekler
-
-                for(y in yemeklerListesi) {
-                    Log.e("*******************","********************************")
-                    Log.e("Yemek id", y.yemek_id.toString())
-                    Log.e("Yemek Adı", y.yemek_adi)
-                    Log.e("Yemek Resim Adı",y.yemek_resim_adi)
-                    Log.e("Yemek Fiyatı",y.yemek_fiyat.toString())
-                }
-            }
-
-            override fun onFailure(call: Call<YemeklerCevap>?, t: Throwable?) {
-
-            }
+            override fun onFailure(call: Call<YemeklerCevap>?, t: Throwable?) {}
 
         })
     }
+
+
 }
