@@ -36,7 +36,6 @@ class YemeklerAdapter(var mContext: Context, var yemeklerListesi:List<Yemekler>,
     override fun onBindViewHolder(holder: CardTasarimTutucu, position: Int) {
         val yemek = yemeklerListesi.get(position)
         val url = ApiUtils.BASE_URL +"yemekler/resimler/" +yemek.yemek_resim_adi
-        Log.e("url", url)
         holder.anasayfaCard.yemekNesne = yemek
         val image = holder.anasayfaCard.imageViewAnasayfa
 

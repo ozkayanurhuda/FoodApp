@@ -47,28 +47,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:textColor="#000000"
+                    android:fontFamily="@font/oswald"
+                    android:text="@{yemekNesne.yemek_adi}"
+                    android:textColor="@color/primaryDarkColor"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:text="@{yemekNesne.yemek_adi}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageViewAnasayfa"
-                    />
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewAnasayfa" />
 
                 <TextView
                     android:id="@+id/textViewAnasayfaFiyat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:textColor="#E01F59"
-                    android:textSize="17sp"
+                    android:fontFamily="@font/oswald"
                     android:text="@{yemekNesne.yemek_fiyat + ' ' + @string/turkish_lira}"
+                    android:textColor="@color/secondaryLightColor"
+                    android:textSize="17sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textViewAnasayfaIsim"
-                     />
+                    app:layout_constraintTop_toBottomOf="@+id/textViewAnasayfaIsim" />
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -78,7 +78,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textViewAnasayfaFiyat"
-                    app:srcCompat="@drawable/anasayfa_arrow" />
+                    app:srcCompat="@drawable/anasayfa_arrow"
+                    app:tint="@color/secondaryDarkColor" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
