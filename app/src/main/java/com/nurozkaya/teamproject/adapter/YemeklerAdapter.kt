@@ -43,7 +43,7 @@ class YemeklerAdapter(var mContext: Context, var yemeklerListesi:List<Yemekler>,
 
 
         holder.anasayfaCard.anasayfaCardView.setOnClickListener {
-            val gecis = AnasayfaFragmentDirections.detayGecis(yemek)
+            val gecis = AnasayfaFragmentDirections.detayGecis(yemek, url)
             Navigation.findNavController(it).navigate(gecis)
         }
     }

@@ -30,9 +30,10 @@ class YemekDetayFragment : Fragment() {
         tasarim.yemekDetayFragment = this
 
         val  bundle:YemekDetayFragmentArgs by navArgs()
+
         val gelenYemek = bundle.yemekNesne
         tasarim.yemekNesnesi = gelenYemek
-        val url = ApiUtils.BASE_URL +"yemekler/resimler/" +gelenYemek.yemek_resim_adi
+        val url = bundle.yemekUrl
         val image = tasarim.imageViewDetay
         Picasso.get().load(url).into(image)
 

@@ -22,6 +22,10 @@
         <argument
             android:name="yemekNesne"
             app:argType="com.nurozkaya.teamproject.entity.Yemekler" />
+        <argument
+            android:name="yemekUrl"
+            app:argType="string"
+            android:defaultValue="emptyUrl" />
     </fragment>
     <fragment
         android:id="@+id/profilFragment"
